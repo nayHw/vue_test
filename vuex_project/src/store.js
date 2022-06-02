@@ -6,25 +6,23 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        items:['item1','item2','items3'],
+        items:[],
     },
     getters:{
-        getLocalStorageData(){
-            localStorage.getItem('items').split(',')
+        getLocalStorageData(state){
+            return state
         }
     },
     mutations: {
-        addList(state, newItem){
+        addList(state, newItem,){
             state.items.push(newItem)
-            localStorage.setItem('items',state.items)
         },
         delItem(state, index){
             state.items.splice(index,1)
-            localStorage.setItem('items',state.items)
         }
     },
     actions: {
-        addList({commit}, newItem){
+        addList({commit}, newItem) {
             commit('addList', newItem)
         },
         delItem({commit}, index){

@@ -15,6 +15,9 @@
           <td class="text-primary click">Edit</td>
           <td class="text-danger click" @click="delItem(index)">Del</td>
         </tr>
+        <tr v-if="lists == ''">
+          <td colspan="4" class="text-center text-info"> Not found Data </td>
+        </tr>
       </tbody>
     </table>
   </div>
